@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muntazim Alam | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="p-6 bg-gray-800 shadow-lg sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-400">Muntazim Alam</h1>
+        <nav class="space-x-4">
+          <a href="#home" class="hover:text-blue-400">Home</a>
+          <a href="#about" class="hover:text-blue-400">About</a>
+          <a href="#projects" class="hover:text-blue-400">Projects</a>
+          <a href="#skills" class="hover:text-blue-400">Skills</a>
+          <a href="#contact" class="hover:text-blue-400">Contact</a>
+          <a href="Muntazim_Alam_Resume.pdf" download class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded">Download Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4" data-aos="fade-up">
+      <h2 class="text-4xl sm:text-6xl font-bold mb-4">Hello, I'm Muntazim Alam</h2>
+      <p class="text-xl sm:text-2xl text-blue-300 mb-6 max-w-2xl">Cloud Computing Student | Aspiring Cloud Engineer with a passion for IoT, AWS, and modern web development.</p>
+      <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded text-white text-lg transition transform hover:scale-105">View My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-800 py-16 px-6" data-aos="fade-right">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <img src="https://via.placeholder.com/400" alt="Profile" class="rounded-2xl shadow-lg" />
+        <div>
+          <h3 class="text-3xl font-bold text-blue-400 mb-4">About Me</h3>
+          <p class="text-lg text-gray-300 mb-4">
+            I'm Muntazim Alam, a passionate Cloud Computing student at CMR University. I specialize in IoT-based projects, web development, and cloud integration using AWS. I've worked on Arduino and ESP32-based automation systems and developed dynamic web applications using Python, Java, and SQL/NoSQL.
+          </p>
+          <p class="text-lg text-gray-300 mb-4">
+            My goal is to contribute as a Cloud Engineer, leveraging my experience in full-stack development and cloud platforms to create secure, scalable solutions. I'm also active in organizing tech events and hackathons, reflecting my commitment to continuous learning and community engagement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-6" data-aos="fade-left">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-3xl font-bold text-blue-400 mb-8">Projects</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105">
+            <img src="https://via.placeholder.com/300x200" alt="Project" class="rounded mb-4">
+            <h4 class="text-xl font-semibold">Banking Transaction Website</h4>
+            <p class="text-sm text-gray-400 mb-2">A frontend simulation of banking transactions with visual transfer flow and balance update using HTML, CSS, and JS.</p>
+            <ul class="text-sm text-gray-400 list-disc list-inside">
+              <li>User-friendly UI for transfers</li>
+              <li>Transaction log maintained</li>
+              <li>Used basic DOM manipulation</li>
+            </ul>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105">
+            <img src="https://via.placeholder.com/300x200" alt="Project" class="rounded mb-4">
+            <h4 class="text-xl font-semibold">Employee Management App</h4>
+            <p class="text-sm text-gray-400 mb-2">Java-based application using file storage to register, update, search, and delete employee details.</p>
+            <ul class="text-sm text-gray-400 list-disc list-inside">
+              <li>Console-based with menu options</li>
+              <li>CRUD operations implemented</li>
+              <li>Focus on modular design</li>
+            </ul>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg shadow-md hover:shadow-xl transition transform hover:scale-105">
+            <img src="https://via.placeholder.com/300x200" alt="Project" class="rounded mb-4">
+            <h4 class="text-xl font-semibold">IoT Smart Car</h4>
+            <p class="text-sm text-gray-400 mb-2">Arduino-controlled car with sensors for obstacle avoidance and Bluetooth-based control.</p>
+            <ul class="text-sm text-gray-400 list-disc list-inside">
+              <li>Ultrasonic sensors for detection</li>
+              <li>Motor driver and Bluetooth module</li>
+              <li>Basic autonomous movement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-800 py-16 px-6" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto text-center">
+        <h3 class="text-3xl font-bold text-blue-400 mb-8">Skills</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-blue-400 mb-4">Cloud Computing</h4>
+            <ul class="text-gray-300 list-disc list-inside">
+              <li>AWS</li>
+              <li>Azure</li>
+              <li>Cloud Infrastructure</li>
+              <li>Virtualization</li>
+            </ul>
+          </div>
+          <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-blue-400 mb-4">Programming Languages</h4>
+            <ul class="text-gray-300 list-disc list-inside">
+              <li>Python</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>C/C++</li>
+            </ul>
+          </div>
+          <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold text-blue-400 mb-4">Web Development</h4>
+            <ul class="text-gray-300 list-disc list-inside">
+              <li>HTML, CSS, JavaScript</li>
+              <li>Node.js</li>
+              <li>React.js</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-800 py-16 px-6" data-aos="fade-up">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-3xl font-bold text-blue-400 mb-4">Get In Touch</h3>
+        <p class="text-gray-300 mb-6">Interested in working together? Have a question or idea? Let's connect!</p>
+        <a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition">Contact Me</a>
+        <div class="mt-8 flex justify-center space-x-6">
+          <a href="mailto:Muntazimalam123456@gmail.com" class="text-blue-400 hover:text-white"><i class="fas fa-envelope fa-lg"></i></a>
+          <a href="https://www.linkedin.com/in/muntazim-alam-463b4626a" target="_blank" class="text-blue-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="https://github.com/muntazimalam" target="_blank" class="text-blue-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-center py-6 border-t border-gray-700">
+      <p class="text-gray-500">&copy; 2025 Muntazim Alam. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
