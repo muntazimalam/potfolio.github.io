@@ -3,67 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muntazim Alam | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Muntazim Alam - Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#0f1117] text-white">
+<body class="bg-gray-100 text-gray-900">
 
   <!-- Navbar -->
-  <header class="bg-[#0f1117] shadow-md fixed w-full top-0 z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-blue-400">Muntazim Alam</h1>
-      <nav class="space-x-6">
-        <a href="#home" class="text-white hover:text-blue-400">Home</a>
-        <a href="#about" class="text-white hover:text-blue-400">About</a>
-        <a href="#projects" class="text-white hover:text-blue-400">Projects</a>
-        <a href="#skills" class="text-white hover:text-blue-400">Skills</a>
-        <a href="#contact" class="text-white hover:text-blue-400">Contact</a>
-      </nav>
+  <nav class="bg-white shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600">Muntazim Alam</h1>
+      <ul class="flex space-x-6 text-gray-700">
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
     </div>
-  </header>
-
-  <!-- Spacer for navbar -->
-  <div class="h-20"></div>
+  </nav>
 
   <!-- About Section -->
-  <section id="about" class="min-h-screen bg-[#0f1117] text-white px-6 py-16">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12">
+  <section id="about" class="py-20 px-6 bg-white text-gray-800">
+    <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center md:items-start gap-12">
       
-      <!-- Image Section -->
-      <div class="w-full md:w-1/2 flex justify-center items-center">
-        <img src="images/me.png" alt="Muntazim Alam" class="rounded-lg max-w-xs md:max-w-sm lg:max-w-md" />
+      <!-- Text Section -->
+      <div class="w-full md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold text-blue-600 mb-4">About Me</h2>
+        <p class="text-lg leading-relaxed">
+          I'm <strong>Muntazim Alam</strong>, a BCA Cloud Computing student at CMR University, passionate about becoming a 
+          <span class="text-blue-600 font-semibold">Cloud Engineer</span>. I have skills in Python, Java, HTML, JavaScript, 
+          SQL, AWS, and more. I’ve worked on real-world projects like a human-following robot, home automation, and university 
+          database systems. I’ve also interned as an AI/ML Developer and organized events as a student ambassador.
+        </p>
       </div>
 
-      <!-- Text Section -->
-      <div class="w-full md:w-1/2">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#3b82f6] mb-6">About Me</h2>
-        <p class="text-lg leading-relaxed">
-          I'm a passionate tech enthusiast currently pursuing a 
-          <strong>Bachelor's degree in Cloud Computing</strong> at 
-          <strong>CMR University (2022–2025)</strong>. My interests span across 
-          <strong>Cloud Infrastructure, IoT Systems, Full Stack Development, DevOps</strong>, and 
-          <strong>AI</strong>.
-        </p>
-        <br />
-        <p class="text-lg leading-relaxed">
-          With hands-on experience in real-time academic projects and internships, I've gained strong practical knowledge in 
-          <strong>AWS, Python, Web Technologies</strong>, and 
-          <strong>automation systems</strong>. I'm certified as an 
-          <strong>AWS Certified Cloud Practitioner</strong> and have also completed the 
-          <strong>NPTEL Cloud Computing</strong> course.
-        </p>
-        <br />
-        <p class="text-lg leading-relaxed">
-          As a <strong>Student Ambassador</strong> at CMR University, I've led various technical initiatives, such as organizing coding contests, IT quizzes, and technical treasure hunts.
-        </p>
-        <br />
-        <a href="#" class="text-[#3b82f6] hover:underline text-lg">View Resume</a>
+      <!-- Image Section -->
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img src="images/me.png" alt="Muntazim Alam" class="rounded-xl shadow-lg w-80 h-auto">
       </div>
 
     </div>
   </section>
 
-  <!-- You can continue with other sections like Projects, Skills, Contact, etc. -->
+  <!-- Projects Section (Optional Placeholder) -->
+  <section id="projects" class="py-20 px-6 bg-gray-100 text-center">
+    <h2 class="text-3xl font-bold text-blue-600 mb-8">Projects</h2>
+    <p class="text-lg">Coming soon...</p>
+  </section>
+
+  <!-- Contact Section (Optional Placeholder) -->
+  <section id="contact" class="py-20 px-6 bg-white text-center">
+    <h2 class="text-3xl font-bold text-blue-600 mb-8">Contact Me</h2>
+    <p class="text-lg">You can reach me at <a href="mailto:muntazimalam123456@gmail.com" class="text-blue-600 underline">muntazimalam123456@gmail.com</a></p>
+  </section>
 
 </body>
 </html>
