@@ -5,14 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Muntazim Alam | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .bg-glass {
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+    }
+  </style>
 </head>
-<body class="bg-gray-900 text-white scroll-smooth">
+<body class="bg-gray-900 text-white">
 
   <!-- Navbar -->
-  <header class="bg-gray-800 shadow sticky top-0 z-50">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-      <h1 class="text-xl sm:text-2xl font-bold text-blue-400">Muntazim Alam</h1>
-      <nav class="space-x-4 overflow-x-auto whitespace-nowrap text-sm sm:text-base">
+  <header class="bg-glass shadow sticky top-0 z-50">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-400">Muntazim Alam</h1>
+      <nav class="space-x-6 text-sm">
         <a href="#home" class="hover:text-blue-400">Home</a>
         <a href="#about" class="hover:text-blue-400">About</a>
         <a href="#projects" class="hover:text-blue-400">Projects</a>
@@ -23,81 +32,124 @@
   </header>
 
   <!-- Hero -->
-  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4">Hello, I'm Muntazim Alam</h2>
-    <p class="text-lg sm:text-xl lg:text-2xl text-blue-300 mb-6 max-w-2xl">
-      Cloud Computing Student | Aspiring Cloud Engineer with a passion for IoT, AWS, and modern web development.
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h2 class="text-4xl font-bold mb-4">Hi, I'm <span class="text-blue-400">Muntazim Alam</span></h2>
+    <p class="text-lg text-blue-300 mb-6 max-w-md">
+      Cloud Computing Student | Aspiring Cloud Engineer passionate about AWS, IoT, and Web Development.
     </p>
-    <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded text-white text-base sm:text-lg transition transform hover:scale-105">View My Work</a>
+    <a href="#projects" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded text-white transition">View My Work</a>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 bg-gray-800">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <img src="images/me.png" alt="Profile" class="rounded-2xl shadow-lg w-full max-w-md mx-auto"/>
-      <div>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-blue-400">About Me</h2>
-        <p class="text-lg leading-relaxed">
-          I'm a final-year BCA Cloud Computing student at CMR University. I specialize in AWS, IoT, and full-stack development.
-          I’ve built robots, home automation systems, and web apps. I also serve as a Student Ambassador and have led technical events.
+  <section id="about" class="py-16 bg-glass">
+    <div class="max-w-screen-xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <img src="images/me.png" alt="Muntazim" class="rounded-xl shadow-lg w-full max-w-xs mx-auto md:mx-0"/>
+      <div class="text-center md:text-left">
+        <h2 class="text-2xl font-bold mb-4 text-blue-400">About Me</h2>
+        <p class="text-base leading-relaxed mb-4">
+          I'm a passionate tech enthusiast currently pursuing a <strong>Bachelor's degree in Cloud Computing</strong> at <strong>CMR University (2022–2025)</strong>. My interests span across <strong>Cloud Infrastructure</strong>, <strong>IoT Systems</strong>, <strong>Full Stack Development</strong>, <strong>DevOps</strong>, and <strong>AI</strong>.
         </p>
+        <p class="text-base leading-relaxed mb-4">
+          With hands-on experience in real-time academic projects and internships, I've gained strong practical knowledge in <strong>AWS</strong>, <strong>Python</strong>, <strong>Web Technologies</strong>, and <strong>automation systems</strong>. I'm certified as an <strong>AWS Certified Cloud Practitioner</strong> and have also completed the <strong>NPTEL Cloud Computing</strong> course.
+        </p>
+        <p class="text-base leading-relaxed mb-4">
+          As a <strong>Student Ambassador</strong> at CMR University, I've led various technical initiatives, such as organizing coding contests, IT quizzes, and technical treasure hunts.
+        </p>
+        <a href="Muntazim_Alam_Resume.pdf" target="_blank" class="inline-block text-blue-400 underline">View Resume</a>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-20">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-blue-400 mb-12 text-center">Projects</h2>
+  <section id="projects" class="py-16 bg-glass">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-blue-400 mb-10 text-center">Projects</h2>
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition">
-          <img src="images/roboticcar.png" alt="Project 1" class="mb-4 rounded"/>
-          <h3 class="text-xl font-semibold mb-2">Human-Following Robot</h3>
-          <p>A robot that tracks and follows a human using IR sensors and motor driver shield.</p>
+        <div class="bg-gray-800 bg-opacity-70 p-5 rounded-lg shadow hover:shadow-xl transition">
+          <img src="images/homeautomation.png" alt="Project 1" class="mb-4 rounded"/>
+          <h3 class="text-lg font-semibold mb-2">Human-Following Robot</h3>
+          <p class="text-sm">An intelligent robot using Arduino, IR sensors, and motor drivers that follows human movement. It features real-time decision-making and embedded programming integration.</p>
         </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <div class="bg-gray-800 bg-opacity-70 p-5 rounded-lg shadow hover:shadow-xl transition">
           <img src="https://via.placeholder.com/400x200" alt="Project 2" class="mb-4 rounded"/>
-          <h3 class="text-xl font-semibold mb-2">Home Automation System</h3>
-          <p>IoT-based system using NodeMCU and Arduino Cloud to control appliances remotely and manually.</p>
+          <h3 class="text-lg font-semibold mb-2">Home Automation System</h3>
+          <p class="text-sm">An IoT-based smart system using NodeMCU and relays. It provides manual and cloud-based control using Arduino IoT Cloud and push button toggles.</p>
         </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <div class="bg-gray-800 bg-opacity-70 p-5 rounded-lg shadow hover:shadow-xl transition">
           <img src="https://via.placeholder.com/400x200" alt="Project 3" class="mb-4 rounded"/>
-          <h3 class="text-xl font-semibold mb-2">Banking Web Application</h3>
-          <p>A secure online banking system built with HTML, CSS, JavaScript, and SQL.</p>
+          <h3 class="text-lg font-semibold mb-2">Banking Web Application</h3>
+          <p class="text-sm">A secure web portal for banking features like authentication, transactions, and user account management. Built using frontend-backend tech and SQL database.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="py-20 bg-gray-800">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-blue-400 mb-12 text-center">Skills</h2>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="bg-gray-700 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2 text-white">Programming Languages</h3>
-          <p>Python, Java, JavaScript, C, C++, SQL, PL/SQL</p>
-        </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2 text-white">Technologies</h3>
-          <p>AWS, MongoDB, IoT, Arduino, NodeMCU, Git</p>
-        </div>
-        <div class="bg-gray-700 p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold mb-2 text-white">Web & Cloud</h3>
-          <p>HTML, CSS, Tailwind, Cloud Computing, DevOps basics</p>
+  <section id="skills" class="py-16 bg-glass">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h2 class="text-2xl font-bold text-blue-400 mb-10 text-center">Skills</h2>
+
+      <!-- Group 1 -->
+      <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Programming Languages</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-800 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">Python</h3>
+            <div class="w-full bg-gray-700 rounded-full h-4">
+              <div class="bg-blue-500 h-4 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="bg-gray-800 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">Java</h3>
+            <div class="w-full bg-gray-700 rounded-full h-4">
+              <div class="bg-blue-500 h-4 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="bg-gray-800 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">JavaScript</h3>
+            <div class="w-full bg-gray-700 rounded-full h-4">
+              <div class="bg-blue-500 h-4 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Group 2 -->
+      <div class="text-center mb-10">
+        <h3 class="text-lg font-semibold text-blue-400 mb-4">Technologies</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-800 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">AWS & Cloud</h3>
+            <div class="w-full bg-gray-700 rounded-full h-4">
+              <div class="bg-blue-500 h-4 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="bg-gray-800 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">IoT & Arduino</h3>
+            <div class="w-full bg-gray-700 rounded-full h-4">
+              <div class="bg-blue-500 h-4 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="bg-gray-800 p-4 rounded shadow">
+            <h3 class="font-semibold mb-2">HTML/CSS/Tailwind</h3>
+            <div class="w-full bg-gray-700 rounded-full h-4">
+              <div class="bg-blue-500 h-4 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20">
-    <div class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold text-blue-400 mb-8">Contact Me</h2>
-      <p class="mb-4">📧 Email: <a href="mailto:Muntazimalam123456@gmail.com" class="text-blue-400 hover:underline">Muntazimalam123456@gmail.com</a></p>
-      <p class="mb-4">📱 Phone: <a href="tel:+918088439649" class="text-blue-400 hover:underline">+91 8088439649</a></p>
-      <p class="mb-4">🔗 LinkedIn: <a href="https://www.linkedin.com/in/muntazim-alam-463b4626a" class="text-blue-400 hover:underline">linkedin.com/in/muntazim-alam</a></p>
-      <p>💻 GitHub: <a href="https://github.com/muntazimalam" class="text-blue-400 hover:underline">github.com/muntazimalam</a></p>
+  <section id="contact" class="py-16 text-center">
+    <div class="max-w-screen-sm mx-auto px-6">
+      <h2 class="text-2xl font-bold text-blue-400 mb-6">Contact Me</h2>
+      <p class="mb-3">📧 <a href="mailto:Muntazimalam123456@gmail.com" class="text-blue-400 underline">Muntazimalam123456@gmail.com</a></p>
+      <p class="mb-3">📱 <a href="tel:+918088439649" class="text-blue-400 underline">+91 8088439649</a></p>
+      <p class="mb-3">🔗 <a href="https://www.linkedin.com/in/muntazim-alam-463b4626a" class="text-blue-400 underline">LinkedIn</a></p>
+      <p>💻 <a href="https://github.com/muntazimalam" class="text-blue-400 underline">GitHub</a></p>
     </div>
   </section>
 
@@ -105,6 +157,22 @@
   <footer class="bg-gray-800 text-center py-6 mt-12">
     <p class="text-sm text-gray-400">&copy; 2025 Muntazim Alam. All rights reserved.</p>
   </footer>
+
+  <!-- Scroll to top on navigation -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
