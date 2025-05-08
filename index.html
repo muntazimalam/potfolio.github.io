@@ -28,10 +28,15 @@
       overflow: hidden;
       animation: typing 2.5s steps(20, end), blink-caret .75s step-end infinite;
       font-family: inherit;
+      line-height: 1;
+      vertical-align: baseline;
+      font-size: inherit;
+      padding: 0;
+      margin: 0;
     }
     @keyframes typing {
       from { width: 0 }
-      to { width: 100% }
+      to { width: 13ch }
     }
     @keyframes blink-caret {
       from, to { border-color: transparent }
