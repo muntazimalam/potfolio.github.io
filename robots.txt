@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /backend/
+Disallow: /images/
+
+Sitemap: https://muntazimalam.github.io/potfolio.github.io/sitemap.xml

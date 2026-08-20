@@ -3,494 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Muntazim Alam portfolio showcasing cloud, IoT, and web development projects." />
-  <title>Muntazim Alam | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --bg: #0f0c0a;
-      --bg-soft: #171311;
-      --surface: rgba(255,255,255,0.05);
-      --surface-strong: rgba(255,255,255,0.08);
-      --line: rgba(255,255,255,0.12);
-      --line-strong: rgba(255,255,255,0.2);
-      --text: #f5efe7;
-      --muted: #b7ada1;
-      --muted-2: #8f857b;
-      --accent: #c6a972;
-      --accent-2: #8f6a3a;
-      --accent-soft: rgba(198,169,114,0.16);
-      --glow: rgba(198,169,114,0.2);
-      --success: #9cc79b;
-      --radius: 24px;
-      --radius-sm: 16px;
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
-      --shadow-soft: 0 10px 30px rgba(0,0,0,0.22);
-      --transition: 220ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
+  <title>Muntazim Alam | Cloud, IoT &amp; AI Portfolio</title>
+  <meta name="description" content="Muntazim Alam — cloud computing student and builder of IoT systems, AI pipelines, and polished web experiences. Explore projects, skills, and get in touch." />
+  <meta name="author" content="Muntazim Alam" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://muntazimalam.github.io/potfolio.github.io/" />
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(198,169,114,0.12), transparent 28%),
-        radial-gradient(circle at 85% 18%, rgba(143,106,58,0.16), transparent 24%),
-        radial-gradient(circle at 50% 80%, rgba(255,255,255,0.03), transparent 30%),
-        linear-gradient(135deg, #0b0908 0%, #120f0d 40%, #0e0b09 100%);
-      color: var(--text);
-      font-family: 'Manrope', sans-serif;
-      overflow-x: hidden;
-    }
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Muntazim Alam | Cloud, IoT &amp; AI Portfolio" />
+  <meta property="og:description" content="Cloud computing student building IoT systems, AI pipelines, and polished web experiences." />
+  <meta property="og:image" content="images/me.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    .noise::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.04;
-      z-index: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
-      background-size: 4px 4px;
-      mix-blend-mode: soft-light;
-    }
-
-    .container-shell {
-      position: relative;
-      z-index: 1;
-    }
-
-    .display-font { font-family: 'Cormorant Garamond', serif; }
-
-    .glass {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid var(--line);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .nav-blur {
-      background: rgba(10, 8, 7, 0.6);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .premium-btn {
-      position: relative;
-      overflow: hidden;
-      transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-    }
-
-    .premium-btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.24) 50%, transparent 100%);
-      transform: translateX(-120%);
-      transition: transform 0.7s ease;
-    }
-
-    .premium-btn:hover::before { transform: translateX(120%); }
-    .premium-btn:hover { transform: translateY(-2px); }
-
-    .hero-image-wrap {
-      position: relative;
-      width: min(380px, 80vw);
-      aspect-ratio: 1 / 1.08;
-      border-radius: 36px;
-      overflow: hidden;
-      background: linear-gradient(145deg, rgba(198,169,114,0.18), rgba(255,255,255,0.02));
-      border: 1px solid rgba(198,169,114,0.28);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 28px 80px rgba(0,0,0,0.45), 0 0 80px rgba(198,169,114,0.12);
-      animation: floatY 6s ease-in-out infinite;
-    }
-
-    .hero-image-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.18), transparent 35%);
-      pointer-events: none;
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      transform: scale(1.02);
-    }
-
-    .eyebrow {
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-size: 0.78rem;
-    }
-
-    .divider-line {
-      width: 88px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .project-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s ease, box-shadow 0.45s ease;
-      transform-style: preserve-3d;
-    }
-
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(198,169,114,0.18), transparent 34%);
-      opacity: 0;
-      transition: opacity 0.35s ease;
-      pointer-events: none;
-    }
-
-    .project-card::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(198,169,114,0.8), transparent);
-      transform: scaleX(0.2);
-      opacity: 0.4;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
-      border-color: rgba(198,169,114,0.38);
-      box-shadow: 0 28px 80px rgba(0,0,0,0.34);
-    }
-
-    .project-card:hover::before { opacity: 1; }
-    .project-card:hover::after { transform: scaleX(1); opacity: 1; }
-
-    .project-media {
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-    }
-
-    .project-media img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .project-card:hover .project-media img {
-      transform: scale(1.08);
-    }
-
-    .project-chip {
-      border: 1px solid rgba(198,169,114,0.18);
-      background: rgba(255,255,255,0.04);
-      color: #e8ddcf;
-      border-radius: 999px;
-      padding: 0.45rem 0.85rem;
-      font-size: 0.72rem;
-      line-height: 1;
-    }
-
-    .skills-grid {
-      display: grid;
-      gap: 1.25rem;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-
-    .skill-tile {
-      position: relative;
-      overflow: hidden;
-      min-height: 160px;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
-        radial-gradient(circle at top right, rgba(198,169,114,0.14), transparent 40%);
-      padding: 1.5rem;
-      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .skill-tile:hover {
-      transform: translateY(-6px);
-      border-color: rgba(198,169,114,0.34);
-      box-shadow: 0 22px 60px rgba(0,0,0,0.26);
-    }
-
-    .skill-tile::after {
-      content: "";
-      position: absolute;
-      right: -20px;
-      bottom: -30px;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, rgba(198,169,114,0.16), transparent 65%);
-      filter: blur(6px);
-      pointer-events: none;
-    }
-
-    .skill-tile small {
-      color: var(--muted-2);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-size: 0.7rem;
-    }
-
-    .contact-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 32px;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025)),
-        radial-gradient(circle at top left, rgba(198,169,114,0.12), transparent 30%);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 220px;
-      height: 220px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(198,169,114,0.12), transparent 68%);
-      pointer-events: none;
-    }
-
-    .input-shell {
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(7,7,7,0.18);
-      border-radius: 18px;
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-    }
-
-    .input-shell:focus-within {
-      border-color: rgba(198,169,114,0.5);
-      box-shadow: 0 0 0 4px rgba(198,169,114,0.12);
-      transform: translateY(-1px);
-    }
-
-    .field {
-      width: 100%;
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--text);
-      padding: 1rem 1rem 1rem 1rem;
-    }
-
-    .field::placeholder { color: #847b72; }
-    select.field {
-      color: var(--text);
-      background: linear-gradient(180deg, rgba(20, 17, 14, 0.96), rgba(12, 10, 8, 0.94));
-      color-scheme: dark;
-    }
-
-    select.field:invalid {
-      color: rgba(196, 181, 160, 0.62);
-    }
-
-    select.field option {
-      color: #f5efe4;
-      background: #15110d;
-    }
-
-    select.field option:checked,
-    select.field option:hover,
-    select.field option:focus {
-      color: #0f0c08;
-      background: #c6a56b;
-    }
-
-    .contact-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      border-radius: 999px;
-      padding: 0.95rem 1.15rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .contact-pill:hover {
-      transform: translateY(-3px);
-      border-color: rgba(198,169,114,0.3);
-      background: rgba(255,255,255,0.05);
-    }
-
-    .nav-link { position: relative; }
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 100%;
-      height: 1px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--transition);
-    }
-    .nav-link:hover::after { transform: scaleX(1); }
-
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    @keyframes pulseSoft {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(198,169,114,0.08); }
-      50% { box-shadow: 0 0 0 18px rgba(198,169,114,0); }
-    }
-
-    .pulse-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--accent);
-      animation: pulseSoft 2.2s infinite;
-    }
-
-    .section-space {
-      padding-top: clamp(4rem, 8vw, 7rem);
-      padding-bottom: clamp(4rem, 8vw, 7rem);
-    }
-
-    @media (max-width: 1024px) {
-      .skills-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 768px) {
-      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .project-media img { height: 200px; }
-    }
-
-    @media (max-width: 640px) {
-      .skills-grid { grid-template-columns: 1fr; }
-      .hero-image-wrap { width: min(320px, 86vw); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-      .reveal { opacity: 1; transform: none; }
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="noise selection:bg-amber-200/20 selection:text-white">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[999] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-black">Skip to content</a>
 
-  <header class="nav-blur sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      <div class="h-20 flex items-center justify-between">
-        <a href="#home" class="flex items-center gap-3 text-[0.95rem] font-semibold tracking-[0.18em] uppercase text-[var(--text)]">
-          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(198,169,114,0.28)] bg-[rgba(255,255,255,0.04)] text-[var(--accent)]">M</span>
-          <span>Muntazim Alam</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm text-[var(--muted)]">
-          <a href="#about" class="nav-link hover:text-[var(--text)] transition">About</a>
-          <a href="#projects" class="nav-link hover:text-[var(--text)] transition">Projects</a>
-          <a href="#skills" class="nav-link hover:text-[var(--text)] transition">Expertise</a>
-          <a href="#contact" class="nav-link hover:text-[var(--text)] transition">Contact</a>
-        </nav>
-        <a href="#contact" class="premium-btn hidden sm:inline-flex items-center rounded-full border border-[rgba(198,169,114,0.4)] px-5 py-2.5 text-sm font-semibold text-[var(--accent)] hover:bg-[rgba(198,169,114,0.08)]">
-          Let’s Talk
-        </a>
-      </div>
+<body class="noise">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- Preloader -->
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-mark">MA</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- Fixed layers -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">M</span>
+        <span>Muntazim&nbsp;Alam</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Expertise</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn-ghost nav-cta">Let&rsquo;s Talk</a>
+      <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main id="main-content" class="container-shell">
-    <section id="home" class="section-space min-h-[calc(100vh-5rem)] flex items-center">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full">
-        <div class="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-          <div class="reveal">
-            <p class="eyebrow mb-5">Cloud Computing | IoT | Artificial Intelligence</p>
-            <div class="divider-line mb-8"></div>
-            <h1 class="display-font text-5xl sm:text-6xl lg:text-7xl leading-[0.96] tracking-tight text-[var(--text)] max-w-3xl">
-              Muntazim Alam
-            </h1>
-            <p class="mt-7 max-w-2xl text-base sm:text-lg leading-8 text-[var(--muted)]">
-              Hi iam a cloud computing student focused on creating polished web experiences, practical IoT solutions with clean implementation.
-            </p>
-            <div class="mt-10 flex flex-wrap gap-4">
-              <a href="#projects" class="premium-btn inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-7 py-3.5 text-sm font-bold text-[#1a1410] shadow-[0_12px_30px_rgba(198,169,114,0.24)] hover:bg-[#d4b884]">
-                Explore Projects
-              </a>
-              <a href="#contact" class="premium-btn inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.14)] px-7 py-3.5 text-sm font-semibold text-[var(--text)] hover:border-[rgba(198,169,114,0.38)] hover:bg-white/5">
-                Start a Conversation
-              </a>
-            </div>
-          </div>
+  <!-- Mobile menu -->
+  <nav id="mobileMenu" aria-label="Mobile">
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#skills" class="nav-link">Expertise</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
 
-          <div class="flex justify-center lg:justify-end reveal">
-            <div class="hero-image-wrap">
-              <img src="images/me.png" alt="Portrait of Muntazim Alam" class="hero-image" width="800" height="860" loading="eager" decoding="async" />
-            </div>
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow reveal">Cloud Computing · IoT · Artificial Intelligence</p>
+          <h1 class="display hero-name reveal" data-split id="heroName">Muntazim Alam</h1>
+          <p class="type-line reveal" data-delay="1"><span class="typed" id="typed"></span><span class="type-caret" aria-hidden="true"></span></p>
+          <p class="hero-sub reveal" data-delay="2">
+            I&rsquo;m an MCA student specializing in cloud computing, building IoT systems, AI-driven
+            pipelines, and polished web experiences that solve real-world problems with clean implementation.
+          </p>
+          <div class="hero-actions reveal" data-delay="3">
+            <a href="#projects" class="btn btn-solid">Explore Projects</a>
+            <a href="Resume.pdf" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
           </div>
         </div>
+
+        <div class="hero-visual reveal" data-delay="2">
+          <div class="portrait-ring" aria-hidden="true"></div>
+          <div class="portrait-wrap">
+            <img src="images/me.png" alt="Portrait of Muntazim Alam" width="800" height="860" loading="eager" decoding="async" />
+          </div>
+          <span class="float-badge fb-1"><span class="ico">☁</span> Cloud</span>
+          <span class="float-badge fb-2"><span class="ico">⚡</span> IoT</span>
+          <span class="float-badge fb-3"><span class="ico">✦</span> AI</span>
+          <span class="float-badge fb-4"><span class="ico">⌂</span> Web</span>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="line"></span>
       </div>
     </section>
 
-    <section id="about" class="section-space">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] items-start">
-          <div class="glass rounded-[32px] p-8 reveal">
-            <p class="eyebrow mb-4">Profile</p>
-            <h2 class="display-font text-4xl sm:text-5xl leading-tight text-[var(--text)]">Building innovative systems that seamlessly bridge IoT, software, and cloud
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Python</span><span>JavaScript</span><span>Java</span><span>AWS</span>
+        <span>IoT &amp; Arduino</span><span>SQL / NoSQL</span><span>HTML / CSS</span>
+        <span>FastAPI</span><span>MongoDB</span><span>Git &amp; GitHub</span>
+        <span>Python</span><span>JavaScript</span><span>Java</span><span>AWS</span>
+        <span>IoT &amp; Arduino</span><span>SQL / NoSQL</span><span>HTML / CSS</span>
+        <span>FastAPI</span><span>MongoDB</span><span>Git &amp; GitHub</span>
+      </div>
+    </div>
+
+    <!-- ============ STATS ============ -->
+    <section class="section" style="padding-block: 3rem;">
+      <div class="container stats-grid">
+        <div class="stat-card reveal"><p class="stat-num" data-counter="16">0</p><p class="stat-label">Public Repos</p></div>
+        <div class="stat-card reveal" data-delay="1"><p class="stat-num" data-counter="6">0</p><p class="stat-label">Featured Projects</p></div>
+        <div class="stat-card reveal" data-delay="2"><p class="stat-num" data-counter="3">0</p><p class="stat-label">Core Domains</p></div>
+        <div class="stat-card reveal" data-delay="3"><p class="stat-num" data-counter="5">0</p><p class="stat-label">Languages</p></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="glass about-profile reveal">
+            <p class="eyebrow eyebrow-mb">Profile</p>
+            <h2 class="display section-title">
+              Building systems that <span class="gold-text">bridge</span> IoT, software &amp; cloud.
             </h2>
+            <div class="timeline" style="margin-top: 2.4rem;">
+              <div class="tl-item">
+                <p class="tl-when">2025 — 2027</p>
+                <p class="tl-what">MCA in Cloud Computing</p>
+                <p class="tl-where">CMR University · CGPA 8.15</p>
+              </div>
+              <div class="tl-item">
+                <p class="tl-when">2022 — 2025</p>
+                <p class="tl-what">BCA in Cloud Applications</p>
+                <p class="tl-where">CMR University · CGPA 8.0</p>
+              </div>
+            </div>
+            <a href="Resume.pdf" class="btn btn-solid" style="margin-top:1.6rem;" target="_blank" rel="noopener noreferrer">Download Resume ↗</a>
           </div>
-          <div class="glass rounded-[32px] p-8 sm:p-10 reveal">
-            <p class="text-[var(--muted)] leading-8 text-base sm:text-lg mb-6">
-              I’m a passionate tech enthusiast and MCA student at CMR University, specializing in cloud computing. I hold a Bachelor’s degree in Cloud Applications (CGPA: 8.0) and am currently pursuing my MCA (CGPA: 8.15, expected 2027). With skills in C, Java, Python, IoT, databases, and algorithms, I enjoy building practical, real-world solutions. I’m also actively involved in mentoring, organizing technical events, and sharing knowledge. I’m driven by continuous learning, innovation, and creating impactful solutions through technology.
+
+          <div class="glass about-bio reveal" data-delay="1">
+            <p class="eyebrow eyebrow-mb">About Me</p>
+            <p class="section-sub" style="font-size: 1.02rem; line-height: 1.95; color: var(--muted);">
+              I&rsquo;m a passionate tech enthusiast and MCA student at CMR University specializing in
+              cloud computing, with a Bachelor&rsquo;s in Cloud Applications under my belt. I enjoy building
+              practical, real-world solutions — from home automation driven by NodeMCU and Arduino IoT Cloud
+              to AI-powered media pipelines and customer segmentation engines.
             </p>
-            <div class="grid gap-4 sm:grid-cols-3">
-              <div class="rounded-[22px] border border-white/10 bg-white/[0.03] p-5">
-                <small class="block mb-2">Focus Area</small>
-                <p class="font-semibold text-[var(--text)]">Internet of Things</p>
+            <p class="section-sub" style="margin-top: 1rem; line-height: 1.95; color: var(--muted);">
+              I also mentor peers, organize technical events, and share knowledge freely — driven by continuous
+              learning and creating impactful technology.
+            </p>
+            <div class="about-cards">
+              <div class="about-card">
+                <small>Focus</small>
+                <p>Internet of Things</p>
               </div>
-              <div class="rounded-[22px] border border-white/10 bg-white/[0.03] p-5">
-                <small class="block mb-2">Hands-on</small>
-                <p class="font-semibold text-[var(--text)]">IoT Systems & Automation</p>
+              <div class="about-card">
+                <small>Hands-on</small>
+                <p>IoT &amp; Automation</p>
               </div>
-              <div class="rounded-[22px] border border-white/10 bg-white/[0.03] p-5">
-                <small class="block mb-2">Approach</small>
-                <p class="font-semibold text-[var(--text)]">Clean, usable web experiences</p>
+              <div class="about-card">
+                <small>Approach</small>
+                <p>Clean, usable web experiences</p>
               </div>
             </div>
           </div>
@@ -498,279 +179,378 @@
       </div>
     </section>
 
-    <section id="projects" class="section-space">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="mb-12 reveal">
-          <p class="eyebrow mb-4">Selected Work</p>
-          <h2 class="display-font text-4xl sm:text-5xl text-[var(--text)]">A collection of projects solving real-world problems through technology.</h2>
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <p class="eyebrow eyebrow-mb reveal">Selected Work</p>
+        <h2 class="display section-title reveal" data-delay="1">
+          A collection of projects solving <span class="gold-text">real-world</span> problems.
+        </h2>
+
+        <div class="filter-row reveal" data-delay="2" role="tablist" aria-label="Filter projects">
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="ml">AI / ML</button>
+          <button class="filter-chip" data-filter="iot">IoT</button>
+          <button class="filter-chip" data-filter="web">Web</button>
         </div>
 
-        <div class="grid gap-8 lg:grid-cols-3">
-          <article class="project-card p-5 reveal">
-            <div class="project-media mb-5">
-              <img src="images/roboticcar.png" alt="Obstacle avoiding remote control car project" width="900" height="600" loading="lazy" decoding="async" />
+        <div class="projects-grid">
+
+          <!-- 1 · Media Processing Pipeline -->
+          <article class="project-card reveal" data-category="ml">
+            <div class="project-media">
+              <img src="images/ocr-pipeline.svg" alt="Media processing pipeline dashboard mockup" width="900" height="560" loading="lazy" decoding="async" />
             </div>
-            <div class="space-y-4">
-              <div class="flex flex-wrap gap-2">
-                <span class="project-chip">Arduino</span>
-                <span class="project-chip">IR Sensors</span>
-                <span class="project-chip">Bluetooth</span>
-                <span class="project-chip">IoT Control</span>
+            <div class="project-body">
+              <div class="project-chips">
+                <span class="chip">FastAPI</span><span class="chip">OCR</span>
+                <span class="chip">Docker</span><span class="chip">Celery</span><span class="chip">PostgreSQL</span>
               </div>
-              <h3 class="text-2xl font-semibold leading-snug text-[var(--text)]">Obstacle Avoiding & Remote-Control Car</h3>
-              <p class="text-[var(--muted)] leading-7 text-sm sm:text-[0.96rem]">
-                A robotics project that combines autonomous obstacle detection with manual remote control, bringing together embedded logic, movement control, and responsive wireless operation in a compact prototype.
+              <h3 class="project-title">Media Processing Pipeline &amp; Dashboard</h3>
+              <p class="project-desc">
+                Vehicle image QC, license-plate recognition with multi-country formats, tampering detection,
+                and a glassmorphism dashboard — designed to run on free-tier memory budgets with automatic
+                PostgreSQL ↔ SQLite and Celery ↔ background-task fallbacks.
               </p>
-              <a href="https://github.com/muntazimalam/iot-obstacle-remote-car" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[#e2c593] transition">
-                View Repository
-                <span aria-hidden="true">↗</span>
-              </a>
+              <div class="project-foot">
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/muntazimalam/OCR_text" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
+                </div>
+                <span class="repo-stats" data-repo="muntazimalam/OCR_text" aria-label="Repository stars and forks"></span>
+              </div>
             </div>
           </article>
 
-          <article class="project-card p-5 reveal">
-            <div class="project-media mb-5">
-              <img src="images/homeautomation.png" alt="Home automation system circuit and dashboard project" width="900" height="600" loading="lazy" decoding="async" />
+          <!-- 2 · Customer Segmentation -->
+          <article class="project-card reveal" data-delay="1" data-category="ml">
+            <div class="project-media">
+              <img src="images/segmentation.svg" alt="Customer segmentation dashboard mockup" width="900" height="560" loading="lazy" decoding="async" />
             </div>
-            <div class="space-y-4">
-              <div class="flex flex-wrap gap-2">
-                <span class="project-chip">NodeMCU</span>
-                <span class="project-chip">Arduino IoT Cloud</span>
-                <span class="project-chip">Relays</span>
-                <span class="project-chip">Automation</span>
+            <div class="project-body">
+              <div class="project-chips">
+                <span class="chip">Streamlit</span><span class="chip">scikit-learn</span>
+                <span class="chip">K-Means</span><span class="chip">RFM</span>
               </div>
-              <h3 class="text-2xl font-semibold leading-snug text-[var(--text)]">Home Automation System</h3>
-              <p class="text-[var(--muted)] leading-7 text-sm sm:text-[0.96rem]">
-                A smart home control setup built for synchronized physical and remote interactions, allowing appliance management through cloud connectivity while keeping the experience simple and dependable.
+              <h3 class="project-title">AI Customer Segmentation Engine</h3>
+              <p class="project-desc">
+                An interactive segmentation engine that builds RFM profiles, standardizes features, and lets
+                you explore K-Means clusters through statistical analysis and visual discovery tabs.
               </p>
-              <a href="https://github.com/muntazimalam/home-automation-system" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[#e2c593] transition">
-                View Repository
-                <span aria-hidden="true">↗</span>
-              </a>
+              <div class="project-foot">
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/muntazimalam/customer_segmentation" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
+                </div>
+                <span class="repo-stats" data-repo="muntazimalam/customer_segmentation" aria-label="Repository stars and forks"></span>
+              </div>
             </div>
           </article>
 
-          <article class="project-card p-5 reveal">
-            <div class="project-media mb-5">
-              <img src="images/bank.png" alt="Banking web application interface" width="900" height="600" loading="lazy" decoding="async" />
+          <!-- 3 · Home Automation -->
+          <article class="project-card reveal" data-delay="2" data-category="iot">
+            <div class="project-media">
+              <img src="images/homeautomation.png" alt="Home automation system circuit and dashboard" width="900" height="560" loading="lazy" decoding="async" />
             </div>
-            <div class="space-y-4">
-              <div class="flex flex-wrap gap-2">
-                <span class="project-chip">Frontend</span>
-                <span class="project-chip">JavaScript</span>
-                <span class="project-chip">Authentication Flow</span><br>
-              </div><br>
-              <h3 class="text-2xl font-semibold leading-snug text-[var(--text)]">Banking Web Application</h3>
-              <p class="text-[var(--muted)] leading-7 text-sm sm:text-[0.96rem]">
-                A clean banking interface focused on user login, balance operations, and transaction visibility, created to demonstrate secure interaction patterns and structured frontend behavior.
+            <div class="project-body">
+              <div class="project-chips">
+                <span class="chip">NodeMCU</span><span class="chip">Arduino IoT Cloud</span>
+                <span class="chip">Relays</span><span class="chip">Automation</span>
+              </div>
+              <h3 class="project-title">Home Automation System</h3>
+              <p class="project-desc">
+                A cost-effective smart home control setup with cloud connectivity, real-time status feedback,
+                schedule-based rules, and manual override — secure, encrypted, and dependable.
               </p>
-              <div class="flex flex-wrap items-center gap-5">
-                <a href="https://github.com/muntazimalam/alamtransaction.github.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[#e2c593] transition">
-                  View Repository <span aria-hidden="true">↗</span>
-                </a>
-                <a href="https://muntazimalam.github.io/alamtransaction.github.io/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-white/80 hover:text-white transition">
-                  Live Demo <span aria-hidden="true">↗</span>
-                </a>
+              <div class="project-foot">
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/muntazimalam/home-automation-system" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
+                </div>
+                <span class="repo-stats" data-repo="muntazimalam/home-automation-system" aria-label="Repository stars and forks"></span>
               </div>
             </div>
           </article>
+
+          <!-- 4 · Obstacle Car -->
+          <article class="project-card reveal" data-category="iot">
+            <div class="project-media">
+              <img src="images/roboticcar.png" alt="Obstacle avoiding remote control car project" width="900" height="560" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <div class="project-chips">
+                <span class="chip">Arduino</span><span class="chip">Ultrasonic</span>
+                <span class="chip">HC-05 Bluetooth</span><span class="chip">Voice Control</span>
+              </div>
+              <h3 class="project-title">Obstacle-Avoiding &amp; Remote-Control Car</h3>
+              <p class="project-desc">
+                A multi-mode robot car supporting autonomous obstacle avoidance, Bluetooth remote control, and
+                voice commands — modular, Arduino-compatible, and built from embedded logic.
+              </p>
+              <div class="project-foot">
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/muntazimalam/iot-obstacle-remote-car" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
+                </div>
+                <span class="repo-stats" data-repo="muntazimalam/iot-obstacle-remote-car" aria-label="Repository stars and forks"></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5 · Banking app -->
+          <article class="project-card reveal" data-delay="1" data-category="web">
+            <div class="project-media">
+              <img src="images/bank.png" alt="Banking web application interface" width="900" height="560" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <div class="project-chips">
+                <span class="chip">HTML / CSS</span><span class="chip">JavaScript</span>
+                <span class="chip">Auth Flow</span><span class="chip">EMI Calculator</span>
+              </div>
+              <h3 class="project-title">Banking Web Application</h3>
+              <p class="project-desc">
+                A clean banking interface covering login, deposits &amp; withdrawals, transaction history, and an
+                EMI calculator — demonstrating secure interaction patterns and structured frontend behavior.
+              </p>
+              <div class="project-foot">
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/muntazimalam/alamtransaction.github.io" target="_blank" rel="noopener noreferrer">Repo <span aria-hidden="true">↗</span></a>
+                  <a class="link-inline muted" href="https://muntazimalam.github.io/alamtransaction.github.io/" target="_blank" rel="noopener noreferrer">Live Demo <span aria-hidden="true">↗</span></a>
+                </div>
+                <span class="repo-stats" data-repo="muntazimalam/alamtransaction.github.io" aria-label="Repository stars and forks"></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 · HRM Study Suite -->
+          <article class="project-card reveal" data-delay="2" data-category="web">
+            <div class="project-media">
+              <img src="images/hrm.svg" alt="HRM question bank AI study suite mockup" width="900" height="560" loading="lazy" decoding="async" />
+            </div>
+            <div class="project-body">
+              <div class="project-chips">
+                <span class="chip">JavaScript</span><span class="chip">Question Bank</span>
+                <span class="chip">AI Study Suite</span>
+              </div>
+              <h3 class="project-title">HRM Question Bank &amp; AI Study Suite</h3>
+              <p class="project-desc">
+                A self-contained study platform bundling a deep HRM question bank with AI-assisted practice,
+                intelligent review flows, and a polished, fast, offline-first interface.
+              </p>
+              <div class="project-foot">
+                <div class="project-links">
+                  <a class="link-inline" href="https://github.com/muntazimalam/hrm.github.io" target="_blank" rel="noopener noreferrer">View Repository <span aria-hidden="true">↗</span></a>
+                </div>
+                <span class="repo-stats" data-repo="muntazimalam/hrm.github.io" aria-label="Repository stars and forks"></span>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section id="skills" class="section-space">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="mb-12 reveal">
-          <p class="eyebrow mb-4">Expertise</p>
-          <h2 class="display-font text-4xl sm:text-5xl text-[var(--text)]">My core skills driving innovation and real-world solutions.</h2>
-        </div>
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <p class="eyebrow eyebrow-mb reveal">Expertise</p>
+        <h2 class="display section-title reveal" data-delay="1">Core skills driving innovation &amp; real-world solutions.</h2>
 
-        <div class="skills-grid reveal">
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-4">
+        <div class="skills-grid" style="margin-top: 2.6rem;">
+          <div class="skill-tile reveal">
+            <div class="skill-top">
+              <span class="skill-icon">🐍</span>
+              <span class="pct">85%</span>
+            </div>
             <small>Programming</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">Python</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Used for application logic, scripting, automation, and practical development work.</p>
+            <h3>Python</h3>
+            <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
           </div>
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-4">
+          <div class="skill-tile reveal" data-delay="1">
+            <div class="skill-top">
+              <span class="skill-icon">☕</span>
+              <span class="pct">80%</span>
+            </div>
             <small>Programming</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">Java</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Strong foundation for object-oriented programming and structured software design.</p>
+            <h3>Java</h3>
+            <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
           </div>
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-4">
+          <div class="skill-tile reveal" data-delay="2">
+            <div class="skill-top">
+              <span class="skill-icon">⚡</span>
+              <span class="pct">82%</span>
+            </div>
             <small>Frontend</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">JavaScript</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Interactive user interfaces, dynamic behavior, and smooth client-side experiences.</p>
+            <h3>JavaScript</h3>
+            <div class="bar"><div class="bar-fill" data-width="82%"></div></div>
           </div>
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-5">
-            <small>Cloud & Infrastructure</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">AWS & Cloud</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Knowledge of cloud concepts, deployment thinking, and service-oriented architecture.</p>
+          <div class="skill-tile reveal" data-delay="3">
+            <div class="skill-top">
+              <span class="skill-icon">☁</span>
+              <span class="pct">72%</span>
+            </div>
+            <small>Cloud &amp; Infrastructure</small>
+            <h3>AWS &amp; Cloud</h3>
+            <div class="bar"><div class="bar-fill" data-width="72%"></div></div>
           </div>
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-3">
+          <div class="skill-tile reveal">
+            <div class="skill-top">
+              <span class="skill-icon">🗄</span>
+              <span class="pct">76%</span>
+            </div>
             <small>Data</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">SQL / NoSQL</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Data modeling, querying, and handling structured and semi-structured information.</p>
+            <h3>SQL / NoSQL</h3>
+            <div class="bar"><div class="bar-fill" data-width="76%"></div></div>
           </div>
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-4">
+          <div class="skill-tile reveal" data-delay="1">
+            <div class="skill-top">
+              <span class="skill-icon">🔧</span>
+              <span class="pct">88%</span>
+            </div>
             <small>Hardware + Software</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">IoT & Arduino</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Prototype development using embedded devices, sensors, and automation workflows.</p>
+            <h3>IoT &amp; Arduino</h3>
+            <div class="bar"><div class="bar-fill" data-width="88%"></div></div>
           </div>
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-7">
+          <div class="skill-tile reveal" data-delay="2">
+            <div class="skill-top">
+              <span class="skill-icon">🧩</span>
+              <span class="pct">78%</span>
+            </div>
             <small>Engineering</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">Software Engineering</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Focused on maintainable structure, usability, and applying engineering discipline to project delivery.</p>
+            <h3>Software Engineering</h3>
+            <div class="bar"><div class="bar-fill" data-width="78%"></div></div>
           </div>
-          <div class="skill-tile col-span-12 md:col-span-6 lg:col-span-5">
+          <div class="skill-tile reveal" data-delay="3">
+            <div class="skill-top">
+              <span class="skill-icon">🎨</span>
+              <span class="pct">90%</span>
+            </div>
             <small>Web Foundations</small>
-            <h3 class="mt-4 text-2xl font-semibold text-[var(--text)]">HTML / CSS</h3>
-            <p class="mt-3 text-[var(--muted)] leading-7">Responsive layouts, modern styling systems, and polished UI composition.</p>
+            <h3>HTML / CSS</h3>
+            <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section-space">
-      <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="contact-card p-6 sm:p-8 lg:p-10 reveal">
-          <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] items-start">
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-grid">
             <div>
-              <div class="flex items-center gap-3 mb-5">
+              <div style="display:flex; align-items:center; gap:0.8rem; margin-bottom:1.2rem;">
                 <span class="pulse-dot" aria-hidden="true"></span>
-                <p class="eyebrow !tracking-[0.22em] !text-[var(--accent)] mb-0">Get In Touch</p>
+                <p class="eyebrow" style="margin:0;">Get In Touch</p>
               </div>
-              <h2 class="display-font text-4xl sm:text-5xl leading-tight text-[var(--text)] max-w-xl">
+              <h2 class="display section-title" style="font-size: clamp(2rem, 4vw, 2.9rem);">
                 Open to opportunities, collaborations, and conversations.
               </h2>
-              <div class="mt-8 flex flex-col gap-4">
-                <a href="mailto:Muntazimalam123456@gmail.com" class="contact-pill w-fit text-[var(--text)]" target="_blank" rel="noopener noreferrer">
-                  <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(198,169,114,0.14)] text-[var(--accent)]">✉</span>
-                  <span>
-                    <span class="block text-xs uppercase tracking-[0.18em] text-[var(--muted-2)]">Email</span>
-                    <span class="text-sm sm:text-base">Muntazimalam123456@gmail.com</span>
-                  </span>
-                </a>
-                <a href="https://www.linkedin.com/in/muntazim-alam-463b4626a" class="contact-pill w-fit text-[var(--text)]" target="_blank" rel="noopener noreferrer">
-                  <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[rgba(198,169,114,0.14)] text-[var(--accent)]">in</span>
-                  <span>
-                    <span class="block text-xs uppercase tracking-[0.18em] text-[var(--muted-2)]">LinkedIn</span>
-                    <span class="text-sm sm:text-base">linkedin.com/in/muntazim-alam-463b4626a</span>
-                  </span>
-                </a>
-              </div>
+              <p class="section-sub">
+                Fill the form and it lands safely in my mailbox — and in a plain-text archive on the server,
+                never exposed in this repository.
+              </p>
+              <a href="mailto:Muntazimalam123456@gmail.com" class="contact-pill" rel="noopener noreferrer">
+                <span class="ico">✉</span>
+                <span><small>Email</small><strong>Muntazimalam123456@gmail.com</strong></span>
+              </a>
+              <br />
+              <a href="https://www.linkedin.com/in/muntazim-alam-463b4626a" class="contact-pill" target="_blank" rel="noopener noreferrer">
+                <span class="ico">in</span>
+                <span><small>LinkedIn</small><strong>in/muntazim-alam-463b4626a</strong></span>
+              </a>
+              <br />
+              <a href="https://github.com/muntazimalam" class="contact-pill" target="_blank" rel="noopener noreferrer">
+                <span class="ico">⌥</span>
+                <span><small>GitHub</small><strong>@muntazimalam</strong></span>
+              </a>
             </div>
 
-            <div class="rounded-[28px] border border-white/10 bg-[rgba(255,255,255,0.025)] p-5 sm:p-6 lg:p-7">
-              <form id="contactForm" class="space-y-5">
-                <div>
-                  <label for="name" class="mb-2 block text-sm font-semibold text-[var(--text)]">Full Name</label>
-                  <div class="input-shell">
-                    <input id="name" name="name" type="text" required class="field" placeholder="Enter your name" />
+            <div class="form-shell">
+              <form id="contactForm" novalidate>
+                <div class="form-row">
+                  <div class="field-group">
+                    <label for="name">Full Name *</label>
+                    <div class="field-wrap">
+                      <input id="name" name="name" type="text" required class="field" placeholder="Enter your name" autocomplete="name" />
+                    </div>
+                  </div>
+                  <div class="field-group">
+                    <label for="email">Email Address *</label>
+                    <div class="field-wrap">
+                      <input id="email" name="email" type="email" required class="field" placeholder="you@example.com" autocomplete="email" />
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <label for="email" class="mb-2 block text-sm font-semibold text-[var(--text)]">Email Address</label>
-                  <div class="input-shell">
-                    <input id="email" name="email" type="email" required class="field" placeholder="Enter your email" />
+                <div class="form-row">
+                  <div class="field-group">
+                    <label for="contact">Contact Number</label>
+                    <div class="field-wrap">
+                      <input id="contact" name="contact" type="tel" class="field" placeholder="Optional" autocomplete="tel" />
+                    </div>
+                  </div>
+                  <div class="field-group">
+                    <label for="reason">Reason for Contact *</label>
+                    <span class="select-wrap">
+                      <div class="field-wrap">
+                        <select id="reason" name="reason" required class="field">
+                          <option value="" disabled selected>Select a reason</option>
+                          <option value="Project collaboration">Project collaboration</option>
+                          <option value="Internship / Job opportunity">Internship / Job opportunity</option>
+                          <option value="Freelance work">Freelance work</option>
+                          <option value="General inquiry">General inquiry</option>
+                        </select>
+                      </div>
+                      <span class="select-arrow" aria-hidden="true">▾</span>
+                    </span>
                   </div>
                 </div>
 
-                <div>
-                  <label for="contactNumber" class="mb-2 block text-sm font-semibold text-[var(--text)]">Contact Number</label>
-                  <div class="input-shell">
-                    <input id="contactNumber" name="contactNumber" type="tel" class="field" placeholder="Optional contact number" />
+                <div class="form-row" style="margin-bottom: 1.4rem;">
+                  <div class="field-group">
+                    <label for="message">Message</label>
+                    <div class="field-wrap">
+                      <textarea id="message" name="message" rows="4" class="field" placeholder="Tell me a little about your idea or opportunity…" style="resize: vertical; min-height: 110px;"></textarea>
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <label for="reason" class="mb-2 block text-sm font-semibold text-[var(--text)]">Reason for Contact</label>
-                  <div class="input-shell">
-                    <select id="reason" name="reason" required class="field appearance-none">
-                      <option value="" disabled selected>Select a reason</option>
-                      <option value="Project collaboration">Project collaboration</option>
-                      <option value="Internship / Job opportunity">Internship / Job opportunity</option>
-                      <option value="Freelance work">Freelance work</option>
-                      <option value="General inquiry">General inquiry</option>
-                    </select>
-                  </div>
+                <div class="hp-field" aria-hidden="true">
+                  <label for="website">Website</label>
+                  <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
                 </div>
 
-                <button type="submit" class="premium-btn inline-flex w-full items-center justify-center rounded-[18px] bg-[var(--accent)] px-5 py-3.5 text-sm font-bold text-[#1a1410] hover:bg-[#d4b884]">
+                <button id="submitBtn" type="submit" class="btn btn-solid" style="width: 100%; border-radius: 16px; padding: 1rem;">
                   Submit Inquiry
                 </button>
 
-                <p id="formStatus" class="text-sm font-medium text-[var(--success)]" aria-live="polite"></p>
+                <div id="formStatus" class="form-status info" role="status" aria-live="polite">
+                  <span>Your submissions are stored in a plain-text archive on the server.</span>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="border-t border-white/6 py-8 text-center text-sm text-[var(--muted-2)]">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-      © 2026 Muntazim Alam.
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container footer-inner">
+      <a href="#home" class="logo"><span class="logo-mark">M</span><span>Muntazim Alam</span></a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Expertise</a>
+        <a href="Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://github.com/muntazimalam" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/muntazim-alam-463b4626a" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </nav>
+      <p class="footer-note">© <b id="year">2026</b> Muntazim Alam. Crafted with <b>pure HTML, CSS &amp; JavaScript</b>.</p>
     </div>
   </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      reveals.forEach((el) => observer.observe(el));
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
-      document.querySelectorAll('.project-card').forEach((card) => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          card.style.setProperty('--x', `${x}%`);
-          card.style.setProperty('--y', `${y}%`);
-        });
-      });
-
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const contact = document.getElementById('contactNumber').value.trim();
-        const reason = document.getElementById('reason').value.trim();
-
-        if (!name || !email || !reason) {
-          status.textContent = 'Please complete the required fields before submitting.';
-          status.style.color = '#e7a5b3';
-          return;
-        }
-
-        const payload = { name, email, contact, reason };
-
-        try {
-          const existing = localStorage.getItem('contactSubmissions');
-          const parsed = existing ? JSON.parse(existing) : [];
-          parsed.push(payload);
-          localStorage.setItem('contactSubmissions', JSON.stringify(parsed, null, 2));
-          form.reset();
-          status.textContent = 'Your details were saved successfully.';
-          status.style.color = '#9cc79b';
-        } catch (error) {
-          status.textContent = 'Unable to save details in this browser context.';
-          status.style.color = '#e7a5b3';
-        }
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
