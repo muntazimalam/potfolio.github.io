@@ -16,7 +16,7 @@
   const LOCAL_HOSTS = ['localhost', '127.0.0.1'];
   const API_BASE = LOCAL_HOSTS.includes(window.location.hostname)
     ? 'http://localhost:8000'
-    : 'https://REPLACE-WITH-YOUR-RENDER-URL.onrender.com';
+    : 'https://muntazim-portfolio-api.onrender.com';
 
   /* ---------------- Preloader ---------------- */
 
@@ -428,7 +428,7 @@
   });
 
   // Lightweight analytics hook (no-op if Google Analytics absent)
-  window.gaEvent = window.gaEvent || function () {};
+  window.gaEvent = window.gaEvent || function () { };
 
   /* ---------------- Footer year ---------------- */
 
