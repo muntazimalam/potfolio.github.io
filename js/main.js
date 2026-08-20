@@ -9,10 +9,8 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------------- API endpoint ---------------- */
-  // Local development targets the local FastAPI backend.
-  // After deploying on Render, replace the placeholder with your API URL, e.g.:
-  //   https://muntazim-portfolio-api.onrender.com
-  // and add that origin to ALLOWED_ORIGINS in the backend .env.
+  // Local development targets the local FastAPI backend; the deployed site
+  // talks to the Render-hosted API. Keep ALLOWED_ORIGINS in sync on the backend.
   const LOCAL_HOSTS = ['localhost', '127.0.0.1'];
   const API_BASE = LOCAL_HOSTS.includes(window.location.hostname)
     ? 'http://localhost:8000'
