@@ -1,4 +1,4 @@
-# muntazimalam.sbs — Portfolio
+#  Portfolio
 
 Personal portfolio of **Muntazim Alam** — cloud computing, IoT, and AI projects.
 Pure HTML/CSS/JavaScript frontend (no build step) + a small FastAPI backend for the contact form.
