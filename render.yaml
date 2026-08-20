@@ -3,20 +3,19 @@ services:
     name: muntazim-portfolio-api
     runtime: python
     plan: free
-    rootDir: backend
     buildCommand: pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
         value: "3.13.0"
       - key: GMAIL_USER
-        sync: false
+        value: "Muntazimalam123456@gmail.com"
       - key: GMAIL_APP_PASSWORD
         sync: false
       - key: ADMIN_TOKEN
         sync: false
       - key: NOTIFY_TO
-        sync: false
+        value: "Muntazimalam123456@gmail.com"
       - key: ALLOWED_ORIGINS
         value: "https://muntazimalam.github.io,https://muntazimalam.sbs"

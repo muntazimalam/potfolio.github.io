@@ -35,12 +35,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, PlainTextResponse
 from pydantic import BaseModel, EmailStr, Field
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")   # backend/.env (local secrets, gitignored)
+load_dotenv()                    # .env in cwd (optional, e.g. repo root)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("portfolio-contact")
 
-DATA_FILE = Path(os.getenv("DATA_FILE", "submissions.jsonl"))
+DATA_FILE = Path(os.getenv("DATA_FILE", BASE_DIR / "data" / "submissions.jsonl"))
 GMAIL_USER = os.getenv("GMAIL_USER", "")
 GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD", "")
 NOTIFY_TO = os.getenv("NOTIFY_TO", GMAIL_USER)
