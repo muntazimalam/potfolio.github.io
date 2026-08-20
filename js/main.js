@@ -14,7 +14,7 @@
   const LOCAL_HOSTS = ['localhost', '127.0.0.1'];
   const API_BASE = LOCAL_HOSTS.includes(window.location.hostname)
     ? 'http://localhost:8000'
-    : 'https://muntazim-portfolio-api.onrender.com';
+    : 'https://muntazim-portfolio-api-ksau.onrender.com';
 
   /* ---------------- Preloader ---------------- */
 
