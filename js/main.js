@@ -1,20 +1,12 @@
 /* ============================================================
    Muntazim Alam — Portfolio 2026 scripts
-   Animations, nav, filters, GitHub badges, contact form
+   Animations, nav, filters, GitHub stats, contact form (Serverless)
    ============================================================ */
 
 (() => {
   'use strict';
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---------------- API endpoint ---------------- */
-  // Local development targets the local FastAPI backend; the deployed site
-  // talks to the Render-hosted API. Keep ALLOWED_ORIGINS in sync on the backend.
-  const LOCAL_HOSTS = ['localhost', '127.0.0.1'];
-  const API_BASE = LOCAL_HOSTS.includes(window.location.hostname)
-    ? 'http://localhost:8000'
-    : 'https://muntazim-portfolio-api-ksau.onrender.com';
 
   /* ---------------- Preloader ---------------- */
 
@@ -365,13 +357,14 @@
 
   fetchRepoStats();
 
-  /* ---------------- Contact form ---------------- */
+  /* ---------------- Contact form (Web3Forms Serverless Handler) ---------------- */
 
-  const form = document.getElementById('contactForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const status = document.getElementById('formStatus');
+  const form = document.getElementById('contact-form');
+  const submitBtn = form?.querySelector('.submit-btn');
+  const status = document.getElementById('form-result');
 
   function setStatus(kind, message, withSpinner = false) {
+    if (!status) return;
     status.className = `form-status ${kind}`;
     status.innerHTML = withSpinner
       ? `<span class="spinner" aria-hidden="true"></span><span>${message}</span>`
@@ -380,53 +373,38 @@
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (submitBtn.disabled) return;
+    if (submitBtn && submitBtn.disabled) return;
 
-    const payload = {
-      name: document.getElementById('name').value.trim(),
-      email: document.getElementById('email').value.trim(),
-      contact: document.getElementById('contact').value.trim(),
-      reason: document.getElementById('reason').value,
-      message: document.getElementById('message').value.trim(),
-      website: document.getElementById('website').value.trim(), // honeypot
-    };
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
-    if (!payload.name || !payload.email || !payload.reason) {
-      setStatus('error', 'Please complete the required fields before submitting.');
-      return;
-    }
-
-    submitBtn.disabled = true;
+    if (submitBtn) submitBtn.disabled = true;
     setStatus('info', 'Submitting securely…', true);
 
     try {
-      const res = await fetch(`${API_BASE}/api/contact`, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
       });
       const data = await res.json();
 
-      if (res.ok && data.ok) {
+      if (res.status === 200) {
         form.reset();
-        document.getElementById('reason').value = ''; // reset placeholder state
-        const msg = data.emailed
-          ? 'Submitted — your message was saved and emailed to me.'
-          : 'Submitted — your message was saved. (Email notification is being configured.)';
-        setStatus('success', msg);
-        gaEvent('contact_submit', msg);
+        setStatus('success', 'Success! Your message has been sent directly to my inbox.');
       } else {
-        setStatus('error', 'Something went wrong on the server. Please try again in a moment.');
+        setStatus('error', data.message || 'Something went wrong. Please try again.');
       }
     } catch {
-      setStatus('error', 'Could not reach the server — your browser cannot send emails on its own. Is the backend API running?');
+      setStatus('error', 'Could not reach the submission server. Please check your network connection.');
     } finally {
-      submitBtn.disabled = false;
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
-
-  // Lightweight analytics hook (no-op if Google Analytics absent)
-  window.gaEvent = window.gaEvent || function () { };
 
   /* ---------------- Footer year ---------------- */
 
