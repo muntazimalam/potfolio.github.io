@@ -1,7 +1,0 @@
-.env
-submissions.jsonl
-data/
-*.pyc
-__pycache__/
-.venv/
-venv/
