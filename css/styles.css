@@ -625,6 +625,11 @@ main, header, footer { position: relative; z-index: 2; }
   width: 100%;
 }
 
+.form-row {
+  display: grid;
+  gap: 1.2rem;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -639,8 +644,7 @@ main, header, footer { position: relative; z-index: 2; }
   letter-spacing: 0.05em;
 }
 
-.form-group input,
-.form-group textarea {
+.field {
   width: 100%;
   padding: 0.95rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -653,15 +657,43 @@ main, header, footer { position: relative; z-index: 2; }
   transition: border-color 0.25s, box-shadow 0.25s;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.field:focus {
   border-color: rgba(198, 169, 114, 0.6);
   box-shadow: 0 0 0 4px rgba(198, 169, 114, 0.12);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.field::placeholder {
   color: #847b72;
+}
+
+select.field {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+select.field option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+.hp-field {
+  display: none !important;
 }
 
 .submit-btn {
@@ -677,6 +709,10 @@ main, header, footer { position: relative; z-index: 2; }
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 10px 25px rgba(198, 169, 114, 0.2);
   align-self: flex-start;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .submit-btn:hover {
