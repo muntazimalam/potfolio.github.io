@@ -470,52 +470,41 @@
                 <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off">
 
                 <div class="form-row">
-                  <div class="field-group">
+                  <div class="form-group">
                     <label for="name">Your Name</label>
-                    <div class="field-wrap">
-                      <input type="text" id="name" name="name" class="field" placeholder="Muntazim Alam" required />
-                    </div>
+                    <input type="text" id="name" name="name" placeholder="Muntazim Alam" required />
                   </div>
-                  <div class="field-group">
+                  <div class="form-group">
                     <label for="email">Email Address</label>
-                    <div class="field-wrap">
-                      <input type="email" id="email" name="email" class="field" placeholder="you@domain.com" required />
-                    </div>
+                    <input type="email" id="email" name="email" placeholder="you@domain.com" required />
                   </div>
                 </div>
 
                 <div class="form-row">
-                  <div class="field-group">
+                  <div class="form-group">
                     <label for="contact">Contact Number / WhatsApp</label>
-                    <div class="field-wrap">
-                      <input type="tel" id="contact" name="contact" class="field" placeholder="+91 ..." />
-                    </div>
+                    <input type="tel" id="contact" name="contact" placeholder="+91 ..." />
                   </div>
-                  <div class="field-group">
+                  <div class="form-group">
                     <label for="reason">Inquiry Reason</label>
-                    <div class="field-wrap select-wrap">
-                      <select id="reason" name="reason" class="field" required>
-                        <option value="" disabled selected>Select reason...</option>
-                        <option value="job">Job / Internship Opportunity</option>
-                        <option value="project">Project Collaboration</option>
-                        <option value="freelance">Freelance / Consulting</option>
-                        <option value="other">General Inquiry</option>
-                      </select>
-                      <span class="select-arrow" aria-hidden="true">▼</span>
-                    </div>
+                    <select id="reason" name="reason" class="field" required>
+                      <option value="" disabled selected>Select reason...</option>
+                      <option value="job">Job / Internship Opportunity</option>
+                      <option value="project">Project Collaboration</option>
+                      <option value="freelance">Freelance / Consulting</option>
+                      <option value="other">General Inquiry</option>
+                    </select>
                   </div>
                 </div>
 
-                <div class="field-group" style="margin-bottom: 1rem;">
+                <div class="form-group">
                   <label for="message">Message</label>
-                  <div class="field-wrap">
-                    <textarea id="message" name="message" class="field" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
-                  </div>
+                  <textarea id="message" name="message" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
                 </div>
 
-                <div id="form-result" class="form-status info" style="display: none;"></div>
+                <div id="form-result" class="form-result" style="display: none;"></div>
 
-                <button type="submit" id="submitBtn" class="btn btn-solid" style="width: 100%;">
+                <button type="submit" id="submitBtn" class="submit-btn">
                   <span>Send Message</span>
                 </button>
               </form>
