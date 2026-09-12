@@ -644,38 +644,57 @@ main, header, footer { position: relative; z-index: 2; }
   letter-spacing: 0.05em;
 }
 
-.field {
+/* Updated input, textarea, and select styles to lock in dark theme and defeat autofill overrides */
+.field, input[type="text"], input[type="email"], input[type="tel"], select, textarea {
   width: 100%;
   padding: 0.95rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-sm);
-  background: rgba(7, 7, 7, 0.4);
-  color: var(--text);
+  background: rgba(7, 7, 7, 0.6) !important;
+  color: var(--text) !important;
   font: inherit;
   font-size: 0.95rem;
   outline: none;
   transition: border-color 0.25s, box-shadow 0.25s;
 }
 
-.field:focus {
+/* Prevent browser autofill from injecting light/white backgrounds */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--text) !important;
+  -webkit-box-shadow: 0 0 0px 1000px #0e0c0a inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.field:focus, input:focus, textarea:focus, select:focus {
   border-color: rgba(198, 169, 114, 0.6);
   box-shadow: 0 0 0 4px rgba(198, 169, 114, 0.12);
 }
 
-.field::placeholder {
+.field::placeholder, input::placeholder, textarea::placeholder {
   color: #847b72;
 }
 
-select.field {
+/* Custom styled dropdown arrow & dropdown menu options */
+select, select.field {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c6a972' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
   cursor: pointer;
 }
 
-select.field option {
-  background: var(--bg);
+select option {
+  background: #12100e;
   color: var(--text);
+  padding: 0.5rem;
 }
 
 .select-wrap {
@@ -692,8 +711,13 @@ select.field option {
   pointer-events: none;
 }
 
+/* Completely hide the honeypot spam protection field */
 .hp-field {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
 }
 
 .submit-btn {
