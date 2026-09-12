@@ -830,3 +830,34 @@ footer { border-top: 1px solid rgba(255,255,255,0.07); padding-block: 2.6rem; }
   .reveal, .split-char { opacity: 1 !important; transform: none !important; }
   #preloader { display: none; }
 }
+.form-group select {
+  width: 100%;
+  padding: 0.95rem 2.5rem 0.95rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  background: rgba(7, 7, 7, 0.8) !important;
+  color: var(--text) !important;
+  font: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c6a972' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group select:focus {
+  border-color: rgba(198, 169, 114, 0.6);
+  box-shadow: 0 0 0 4px rgba(198, 169, 114, 0.12);
+}
+
+.form-group select option {
+  background-color: #12100e;
+  color: #f5efe7;
+  padding: 12px;
+}
